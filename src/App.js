@@ -1,18 +1,18 @@
-import React from 'react';
+import ChatBox from "./components/ChatBox";
+import InputBox from "./components/InputBox";
+import {ChatContextProvider} from "./context/chatContext";
 
 function App() {
-  return (
-    <div style={{ textAlign: 'center' }}>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className={"p-10 bg-gray-200 h-screen"}>
+			<ChatContextProvider>
+				<div className={"w-fit shadow-lg mx-auto"}>
+					<ChatBox/>
+					<InputBox/>
+				</div>
+			</ChatContextProvider>
+		</div>
+	);
 }
 
 export default App;

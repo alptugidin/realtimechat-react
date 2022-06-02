@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#edit:empty:before{
+    content: attr(data-placeholder);
+    font-style: italic;
+    color: rgb(145, 145, 145);
+}
