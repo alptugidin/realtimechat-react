@@ -8,3 +8,20 @@
     font-style: italic;
     color: rgb(145, 145, 145);
 }
+
+/* width */
+::-webkit-scrollbar {
+    @apply w-3
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    @apply bg-transparent
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    @apply bg-gray-500 rounded-lg
+}
+
+/* Handle on hover */

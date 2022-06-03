@@ -11,18 +11,23 @@ const io = new Server(server)
 // })
 
 
-// io.on("connection", (socket) => {
-// 	console.log("connected >> " + socket.id)
-// 	socket.on("disconnect", () => {
-// 		console.log("disconnected >> " + socket.id)
-// 	})
-//
-// 	socket.on("color", (color) => {
-// 		console.log("color from clinet >> " + color)
-// 		io.emit("color from server", color)
-// 	})
-//
-// })
+let db = []
+io.on("connection", (socket) => {
+	console.log("connected >> " + socket.id)
+	io.emit("db", db)
+	socket.on("disconnect", () => {
+		console.log("disconnected >> " + socket.id)
+	})
+
+	socket.on("message", (message) => {
+		db.push(message)
+		console.log(db.at(-1))
+		// io.emit("db", db)
+		socket.broadcast.emit("receive-message", message, socket.id)
+	})
+
+})
+
 
 server.listen(3001, () => {
 	console.log("Listening 3001...")

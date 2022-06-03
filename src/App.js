@@ -3,8 +3,11 @@ import InputBox from "./components/InputBox";
 import {ChatContextProvider} from "./context/chatContext";
 
 function App() {
+
+
+
 	return (
-		<div className={"p-10 bg-gray-200 h-screen"}>
+		<div className={"p-10 bg-white h-screen"}>
 			<ChatContextProvider>
 				<div className={"w-fit shadow-lg mx-auto"}>
 					<ChatBox/>
