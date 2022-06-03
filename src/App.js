@@ -9,7 +9,7 @@ function App() {
 	return (
 		<div className={"p-10 bg-white h-screen"}>
 			<ChatContextProvider>
-				<div className={"w-fit shadow-lg mx-auto"}>
+				<div className={"w-fit shadow-lg rounded-lg mx-auto"}>
 					<ChatBox/>
 					<InputBox/>
 				</div>

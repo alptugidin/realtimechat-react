@@ -2,7 +2,6 @@ import {useChat} from "../context/chatContext";
 import Tick from "./Tick";
 import {createRef, useEffect, useRef, useState} from "react";
 import {init, initial, listenMessage} from "../socket/chatSocket";
-import Lobby from "./Lobby";
 
 const popup = (e, index, user) => {
 	if (e.source === user) {
@@ -56,7 +55,6 @@ const ChatBox = () => {
 		if (user === "") {
 			return false
 		}
-		console.log(user)
 		context.setUser(user)
 		loginDiv.current.classList.toggle("hidden")
 		showMessages.current.classList.toggle("hidden")
@@ -70,10 +68,9 @@ const ChatBox = () => {
 
 	return (
 		<div className={"relative"}>
-			<Lobby/>
 			<div
 				ref={loginDiv}
-				className={"w-[600px] h-[544px] bg-black absolute opacity-60 rounded-b-lg rounded-tr-lg"}>
+				className={"w-[600px] h-[544px] bg-black absolute opacity-60 rounded-lg"}>
 				<div>
 					<form action="" onSubmit={handleSubmit} className={"mx-auto mt-40 w-60 relative"}>
 						<input type="text"
@@ -89,8 +86,8 @@ const ChatBox = () => {
 			</div>
 			<div
 				ref={chatBox}
-				className={"flex-row w-[600px] h-[500px] overflow-auto mx-auto bg-orange-200 rounded-tr-lg px-2 py-1"}>
-				<div ref={showMessages} className={"hidden"}>
+				className={"flex-row w-[600px] h-[500px] overflow-auto mx-auto bg-orange-200 rounded-t-lg px-2 py-1"}>
+				<div ref={showMessages} className={"hidden rounded-lg"}>
 					{context.messages.map((e, index) => popup(e, index, user))}
 				</div>
 			</div>

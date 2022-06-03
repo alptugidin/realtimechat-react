@@ -5,11 +5,6 @@ const server = http.createServer(app)
 import {Server} from "socket.io";
 const io = new Server(server)
 
-// app.get("/",(req,res) => {
-// 	console.log("server worked")
-// 	res.send(200)
-// })
-
 
 let db = []
 io.on("connection", (socket) => {
@@ -21,8 +16,6 @@ io.on("connection", (socket) => {
 
 	socket.on("message", (message) => {
 		db.push(message)
-		console.log(db.at(-1))
-		// io.emit("db", db)
 		socket.broadcast.emit("receive-message", message, socket.id)
 	})
 

@@ -3,11 +3,11 @@ let socket = io()
 
 
 const init = () => {
-	console.log("socket starting...")
+	// console.log("socket starting...")
 	socket = io("http://localhost:3001", {transports: ["websocket"]})
 
 	socket.on("connect", () => {
-		console.log("socket has started.")
+		// console.log("socket has started.")
 	})
 
 }
