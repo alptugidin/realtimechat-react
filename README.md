@@ -1,5 +1,6 @@
 # realtimechat-react-socketio-tailwindcss
 Realtime chat application with tailwindcss.
+ www.patika.dev
 
 build -> npm run build </br>
 start in dev mode -> npm start </br>
